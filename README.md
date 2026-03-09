@@ -36,7 +36,8 @@ Swapped the Go HIGHER and Go LOWER messages in check_guess. Fixed the New Game b
 
 ## 📸 Demo
 
-- [ ] [Insert a screenshot of your fixed, winning game here]
+- [<img width="820" height="979" alt="ss1" src="https://github.com/user-attachments/assets/f0d63fbf-ebee-4962-8c20-e0a7906590d6" />
+ ] [Insert a screenshot of your fixed, winning game here]
 
 ## 🚀 Stretch Features
 
