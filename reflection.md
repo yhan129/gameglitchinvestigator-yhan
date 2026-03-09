@@ -64,3 +64,11 @@ Run pytest first before playing manually. The test file was already there and wo
 
 - In one or two sentences, describe how this project changed the way you think about AI generated code.
 AI-generated code can look clean and complete while hiding subtle logic bugs. You still need to read and test it like any other code — the fact that AI wrote it does not make it correct.
+
+---
+
+## Challenge 5: AI Model Comparison
+
+Bug tested: higher/lower hints being swapped.
+
+Claude Code pointed to the exact lines and gave a clean one-line fix — just swap the two return strings, nothing else. ChatGPT also caught the bug but added unnecessary try/except wrapping that made the fix harder to read. Claude's fix was more readable. ChatGPT explained the "why" better in words but overcorrected in the code.

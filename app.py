@@ -27,6 +27,28 @@ low, high = get_range_for_difficulty(difficulty)
 st.sidebar.caption(f"Range: {low} to {high}")
 st.sidebar.caption(f"Attempts allowed: {attempt_limit}")
 
+# Challenge 2: Guess History sidebar — added using Agent mode concept,
+# visualizes how close each previous guess was to the secret
+st.sidebar.divider()
+st.sidebar.subheader("Guess History")
+if "history" in st.session_state and st.session_state.history:
+    for i, g in enumerate(st.session_state.history, start=1):
+        if isinstance(g, int):
+            outcome, _ = check_guess(g, st.session_state.secret)
+            if outcome == "Win":
+                label = f"Guess {i}: {g} — Correct!"
+            elif outcome == "Too High":
+                diff = g - st.session_state.secret
+                label = f"Guess {i}: {g} — {diff} too high"
+            else:
+                diff = st.session_state.secret - g
+                label = f"Guess {i}: {g} — {diff} too low"
+            st.sidebar.caption(label)
+        else:
+            st.sidebar.caption(f"Guess {i}: invalid input")
+else:
+    st.sidebar.caption("No guesses yet.")
+
 if "secret" not in st.session_state:
     st.session_state.secret = random.randint(low, high)
 
