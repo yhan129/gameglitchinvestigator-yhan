@@ -23,11 +23,16 @@ It wrote the code, ran away, and now the game is unplayable.
    - Run `pytest` in your terminal.
    - Keep fixing until all tests pass!
 
-## 📝 Document Your Experience
+## Document Your Experience
 
-- [ ] Describe the game's purpose.
-- [ ] Detail which bugs you found.
-- [ ] Explain what fixes you applied.
+- Describe the game's purpose.
+A number guessing game where the player tries to guess a secret number within a limited number of attempts. The difficulty setting changes both the number range and the attempt limit.
+
+- Detail which bugs you found.
+The higher/lower hints were backwards. The New Game button did not reset the game status so you could not replay after winning or losing. The Hard difficulty range was 1-50 which was easier than Normal, and the New Game button always used 1-100 regardless of difficulty. There was also a hidden bug where every even attempt converted the secret to a string, causing wrong comparison results.
+
+- Explain what fixes you applied.
+Swapped the Go HIGHER and Go LOWER messages in check_guess. Fixed the New Game button to reset status back to playing and use the correct range from the selected difficulty. Changed Hard range from 1-50 to 1-1000. Removed the string conversion bug. Moved all game logic from app.py into logic_utils.py and updated the import.
 
 ## 📸 Demo
 
